@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <h3 style="text-align: center; color: red;">Enter stock symbol</h3>
+    <form action="/quote", method="POST">
+        <div class="form-group">
+            <input class="form-control" type="text" name="symbol" placeholder="Symbol">
+        </div>
+        <button class="btn btn-primary">Search</button>
+    </form>
+{% endblock %}

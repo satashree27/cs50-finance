@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block main %}
+
+    <div class="alert alert-success" role="alert">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <p class="flashes" style="text-align: center;">{{ messages[0] }}</p>
+        {% endif %}
+        {% endwith %}
+    </div>
+
+    <h2 style="text-align: center; color: red;">Portfolio</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Name</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Current Price</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in stocks %}
+            <tr>
+                <th scope="row">{{ stock["symbol"] }}</th>
+                <td>{{ stock["name"] }}</td>
+                <td>{{ stock["shares"] }}</td>
+                <td>{{ stock["price"] }}</td>
+                <td>{{ stock["total"] }}</td>
+                </tr>
+            {% endfor %}
+            <thead>
+                <tr>
+                    <th scope="col">CASH AVAILABLE</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="row">{{ cash }}</th>
+                </tr>
+            </thead>
+            <thead>
+                <tr>
+                    <th scope="col">CASH TOTAL</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="row">{{ cash_total }}</th>
+                </tr>
+            </thead>
+        </tbody>
+    </table>
+
+    <!-- Add Cash -->
+    <p style="text-align: center; color: blue;">Add more cash?</p>
+    <form action="/dashboard" method="POST">
+        <input type="text" name="cash">
+        <button class="btn btn-primary" type="submit">Add Cash</button>
+    </form>
+{% endblock %}
