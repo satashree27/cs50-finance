@@ -47,3 +47,6 @@ Install the required dependencies and run the follwoing command:
 ```
 python app.py
 ```
+
+#### Note:
+As "personal touch" added the change password and add-cash functionality. For the message alerts, used flask [*flash*](https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/).
