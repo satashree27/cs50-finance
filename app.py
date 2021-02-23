@@ -269,3 +269,8 @@ def change_pwd():
     cursor.close()
     flash("Password changed!")
     return redirect("/dashboard")
+
+
+if __name__ == "__main__":
+    app.secret_key = 'mysecret'
+    app.run(debug = True)
