@@ -10,7 +10,7 @@ For the backend of this project Flask was used. The frontend is mainly on HTML a
 SQLite database is used as it is simple for small-scale apps in the development phase.
 
 #### Database
-SQLite databe has been used (finance.db) with 3 tables: users, portfolio, and history.
+SQLite database has been used (finance.db) with 3 tables: users, portfolio, and history.
 *users* stores the users registered and their cash available (Note that by defalt a newly registered user is alloted $10000.0).
 *portfolio* describes the different shares bought by a user.
 *history* decribes the whole history of the actions (BUY or SELL) taken by the user using this app.
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS 'history'(
 'time' TIME DEFAULT CURRENT_TIME);
 
 #### Run
-Install the required dependencies and run the follwoing command:
+Install the required dependencies and run the following command:
 ```
 python app.py
 ```
